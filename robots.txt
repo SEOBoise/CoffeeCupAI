@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://coffeecupai.com/sitemap.xml
