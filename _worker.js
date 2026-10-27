@@ -11,6 +11,8 @@ const cleanRoutes = new Map([
   ["/blog-start-with-one-workflow.html", "/blog/start-with-one-workflow/"],
   ["/contact.html", "/contact/"],
   ["/privacy.html", "/privacy/"],
+  ["/terms.html", "/terms/"],
+  ["/sitemap.html", "/sitemap/"],
 ]);
 
 export default {
