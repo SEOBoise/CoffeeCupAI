@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#121110">
+<title>AI Pilot Failure Rate: MIT's 95% Claim Revisited | Coffee Cup AI</title>
+<meta name="description" content="MIT's 95% AI pilot failure claim was flawed. New McKinsey, Deloitte and Capgemini data shows why enterprise AI still stalls before measurable ROI.">
+<link rel="canonical" href="https://coffeecupai.com/blog/95-ai-failure-stat-one-year-later-junk/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The 95% AI failure stat, one year later: junk number, real problem">
+<meta property="og:description" content="MIT's 95% AI pilot failure claim was flawed. New McKinsey, Deloitte and Capgemini data shows why enterprise AI still stalls before measurable ROI.">
+<meta property="og:url" content="https://coffeecupai.com/blog/95-ai-failure-stat-one-year-later-junk/">
+<meta property="og:image" content="https://coffeecupai.com/assets/95-ai-failure-stat-one-year-later-junk-thumb.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta property="og:image:alt" content="AI pilot failure analysis with notebook funnel diagram and coffee cup">
+<meta property="article:published_time" content="2026-10-29T16:57:00-06:00">
+<meta property="article:modified_time" content="2026-10-29T16:57:00-06:00">
+<meta property="article:section" content="AI Strategy">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The 95% AI failure stat, one year later: junk number, real problem">
+<meta name="twitter:description" content="MIT's 95% AI pilot failure claim was flawed. New McKinsey, Deloitte and Capgemini data shows why enterprise AI still stalls before measurable ROI.">
+<meta name="twitter:image" content="https://coffeecupai.com/assets/95-ai-failure-stat-one-year-later-junk-thumb.jpg">
+<meta name="twitter:image:alt" content="AI pilot failure analysis with notebook funnel diagram and coffee cup">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>@font-face{font-family:Manrope;src:url('/assets/manrope-latin.woff2') format('woff2');font-weight:200 800;font-display:swap}
+:root{color-scheme:dark;--bg:#121110;--surface:#1c1a18;--raised:#26221e;--text:#f5f1e9;--muted:#bcb5ac;--accent:#FC630F;--ink:#18120e;--border:#443b33;--ring:#FFB27F;--radius:28px;--small-radius:14px;--display:Manrope,sans-serif;--mono:'Courier New',monospace;--ease:cubic-bezier(.2,.7,.2,1)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:32px}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 var(--display);-webkit-font-smoothing:antialiased}body.menu-open{overflow:hidden}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}button,a,summary{touch-action:manipulation}a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--ring);outline-offset:5px}button{cursor:pointer}img,svg{max-width:100%;height:auto}h1,h2,h3,p{margin:0}h1,h2,h3{text-wrap:balance}p{text-wrap:pretty}h1{font-size:clamp(44px,6.4vw,88px);line-height:1.06;font-weight:500;letter-spacing:-.06em}h2{font-size:clamp(34px,4.3vw,58px);line-height:1.12;letter-spacing:-.05em;font-weight:500}h3{font-size:24px;line-height:1.25;letter-spacing:-.035em;font-weight:600}p{color:var(--muted);max-width:64ch}::selection{background:var(--accent);color:var(--ink)}.wrap{width:min(100% - 64px,1360px);margin-inline:auto}.narrow{max-width:1180px}.accent{color:var(--accent)}.eyebrow{font:11px/1.5 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}.eyebrow::before{content:'✳';color:var(--accent);font-size:16px;margin-right:12px;vertical-align:-1px}.skip{position:absolute;top:-100px;left:20px;padding:12px 20px;background:var(--accent);color:var(--ink);z-index:100}.skip:focus{top:12px}.site-header{height:100px;display:flex;align-items:center;justify-content:space-between;gap:28px}.brand{display:inline-flex;align-items:center;gap:10px;min-height:44px;flex-shrink:0}.brand-logo{display:block;width:217px;height:44px;object-fit:contain;object-position:left center}.nav{display:flex;align-items:center;gap:22px}.nav a{font-size:11px;min-height:44px;display:flex;align-items:center;white-space:nowrap;transition:color .2s}.nav a:hover,.nav a[aria-current=page]{color:var(--accent)}.nav .nav-contact{padding:0 18px;border:1px solid var(--border);border-radius:100px;gap:16px;font-size:12px}.menu-toggle{display:none;border:1px solid var(--border);border-radius:50%;width:46px;height:46px;background:var(--surface);color:var(--text);align-items:center;justify-content:center;font-size:22px}.hero{border:1px solid #6A351D;border-radius:var(--radius);position:relative;isolation:isolate;overflow:hidden;min-height:660px;background:radial-gradient(ellipse at 90% 60%,#6A2F14 0,transparent 52%),linear-gradient(120deg,#1c1916,#171513)}.hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(#FC630F14 1px,transparent 1px),linear-gradient(90deg,#FC630F14 1px,transparent 1px);background-size:62px 62px;z-index:-1}.hero-content{position:relative;z-index:2;padding:76px 5% 112px;max-width:800px}.hero h1{margin:28px 0;max-width:12ch}.hero h1 .line{display:block}.hero .intro{max-width:450px;font-size:16px}.hero-art{position:absolute;width:65%;right:-16%;top:2%;height:92%;z-index:-1;object-fit:contain}.hero-meta{position:absolute;bottom:28px;left:5%;right:5%;display:flex;justify-content:space-between;gap:20px;border-top:1px solid #FC630F40;padding-top:22px;font:10px/1.5 var(--mono);letter-spacing:.12em;color:var(--muted);text-transform:uppercase}.status-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-right:9px;box-shadow:0 0 12px #FC630F66}.actions{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:32px}.btn{min-height:52px;padding:13px 23px;background:var(--accent);color:var(--ink);border:1px solid transparent;border-radius:100px;display:inline-flex;align-items:center;justify-content:center;gap:30px;font-size:13px;font-weight:700;transition:transform .2s var(--ease),background .2s}.btn:hover{background:#FF7A2F;transform:translateY(-2px)}.arrow{font-size:20px;font-weight:400;line-height:1}.btn-outline{color:var(--text);background:transparent;border-color:var(--border)}.btn-outline:hover{background:var(--raised)}.text-link{display:inline-flex;align-items:center;gap:20px;min-height:44px;font-size:13px;border-bottom:1px solid var(--border)}.text-link:hover{color:var(--accent)}.pill-row{display:flex;align-items:center;justify-content:space-between;padding:28px 2px;gap:12px;border-bottom:1px solid var(--border)}.pill-row span{font:10px var(--mono);text-transform:uppercase;letter-spacing:.13em}.pill-row b{color:var(--accent);font-weight:400}.section{padding-block:100px}.section-head{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:end;margin-bottom:48px}.section-head .eyebrow{margin-bottom:20px}.section-head p{max-width:400px;justify-self:end;font-size:15px}.services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.service-card{background:linear-gradient(135deg,var(--surface),#191715);border:1px solid var(--border);border-radius:var(--small-radius);padding:30px;display:flex;flex-direction:column;min-height:330px;transition:border-color .2s,transform .2s;position:relative;overflow:hidden}.service-card:hover{border-color:var(--accent);transform:translateY(-4px)}.card-top{display:flex;align-items:start;justify-content:space-between;gap:20px;margin-bottom:45px}.card-icon{width:48px;height:48px;border:1px solid #A7441B;border-radius:12px;display:grid;place-items:center;color:var(--accent)}.card-icon svg{width:25px;height:25px}.number{font:11px var(--mono);color:var(--muted)}.service-card p{font-size:14px;margin:15px 0 26px}.service-card .text-link{align-self:flex-start;margin-top:auto;border:0}.service-card.featured{background:var(--accent);border-color:var(--accent);color:var(--ink)}.featured p,.featured .number{color:#37170A}.featured .card-icon{border-color:#B83F0A;color:var(--ink)}.featured .text-link:hover{color:var(--ink)}.approach{display:grid;grid-template-columns:.95fr 1.05fr;border-radius:var(--radius);background:var(--surface);overflow:hidden;border:1px solid var(--border)}.cup-visual{position:relative;min-height:470px;display:grid;place-items:center;overflow:hidden;background:radial-gradient(ellipse at 45% 45%,#713213 0,transparent 65%)}.cup-visual::before,.cup-visual::after{content:'';position:absolute;width:360px;height:360px;border:1px solid #80401F;border-radius:50%;transform:rotateX(50deg)}.cup-visual::after{width:450px;height:450px}.cup-visual svg{position:relative;z-index:1;width:260px;filter:drop-shadow(0 24px 25px #090705)}.visual-caption{position:absolute;bottom:32px;left:32px;font:10px var(--mono);letter-spacing:.12em;color:var(--muted)}.approach-copy{padding:64px 56px}.approach-copy h2{margin:22px 0}.approach-copy p{font-size:15px}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:45px}.step{border-top:1px solid var(--border);padding-top:23px}.step .number{color:var(--accent)}.step h3{font-size:19px;margin:14px 0 10px}.step p{font-size:14px}.work-band{background:var(--accent);color:var(--ink);border-radius:var(--radius);padding:64px;display:grid;grid-template-columns:1.3fr 1fr;gap:60px;position:relative;overflow:hidden}.work-band .eyebrow{color:#451B09}.work-band .eyebrow::before{color:var(--ink)}.work-band h2{margin-top:22px}.work-band p{color:#37170A}.work-band .btn{background:var(--ink);color:var(--text);margin-top:26px}.work-band::after{content:'↗';font-size:270px;line-height:1;position:absolute;right:10%;bottom:-70px;color:#A9360B26;pointer-events:none}.journal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}.journal-card{display:block;min-width:0}.journal-art{height:215px;border-radius:var(--small-radius);border:1px solid var(--border);background:radial-gradient(at 70% 30%,#6A2F14,var(--surface));position:relative;display:grid;place-items:center;overflow:hidden}.journal-art svg{width:110px;height:110px;color:var(--accent);transition:transform .4s var(--ease)}.journal-card:hover .journal-art svg{transform:rotate(-8deg) scale(1.08)}.art-label{position:absolute;bottom:18px;left:20px;font:10px var(--mono);letter-spacing:.13em;color:var(--muted)}.journal-card .eyebrow{display:block;margin:23px 0 12px}.journal-card .eyebrow::before{display:none}.journal-card h3{font-size:22px;max-width:28ch}.journal-card .text-link{margin-top:14px;border:0}.journal-card p{margin-top:16px;font-size:14px}.cta{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding-block:72px;display:flex;justify-content:space-between;align-items:center;gap:40px}.cta h2{font-size:clamp(38px,5vw,68px);margin-top:20px}.cta .btn{flex-shrink:0}.footer{padding-top:50px}.footer-top{display:grid;grid-template-columns:1fr 1fr;gap:48px}.footer-top p{font-size:13px;margin-top:20px;max-width:280px}.footer-links{display:grid;grid-template-columns:1fr 1fr;column-gap:30px}.footer-links a{min-height:44px;display:flex;align-items:center;font-size:12px}.footer-links a:hover{color:var(--accent)}.footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:24px;border-top:1px solid var(--border);padding:24px 0;margin-top:48px;font:10px/1.6 var(--mono);color:var(--muted)}.footer-bottom a{min-height:40px;display:flex;align-items:center}.inner-hero{padding:65px 0 75px;border-bottom:1px solid var(--border)}.breadcrumb{font:11px var(--mono);color:var(--muted);display:flex;align-items:center;gap:15px;margin-bottom:45px}.breadcrumb a{display:inline-flex;min-height:40px;align-items:center}.inner-hero h1{max-width:15ch;margin:25px 0}.inner-hero .lead{font-size:19px;max-width:620px}.split{display:grid;grid-template-columns:.9fr 1.1fr;gap:90px}.split h2{max-width:15ch}.prose p+p{margin-top:20px}.prose h3{margin:36px 0 12px}.prose ul{color:var(--muted);padding-left:20px}.prose li{margin:10px 0}.detail-list{margin:0;padding:0;list-style:none}.detail-list li{padding:25px 0;border-bottom:1px solid var(--border);display:grid;grid-template-columns:35px 1fr;gap:20px}.detail-list li:first-child{padding-top:0}.detail-list h3{font-size:20px;margin-bottom:10px}.detail-list p{font-size:14px}.detail-list .number{padding-top:7px;color:var(--accent)}.soft-panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:50px}.faq{max-width:850px;margin:auto}.faq h2{margin-bottom:35px}details{border-bottom:1px solid var(--border);padding:0 0 22px;margin-top:22px}summary{cursor:pointer;min-height:44px;padding-right:28px;font-size:18px;list-style:none;position:relative}summary::-webkit-details-marker{display:none}summary::after{content:'+';position:absolute;right:0;color:var(--accent);font-size:26px;top:-5px}details[open] summary::after{content:'−'}details p{font-size:14px;padding-top:14px}.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:90px}.email-link{font-size:clamp(19px,2.3vw,29px);display:inline-block;border-bottom:1px solid var(--accent);padding:12px 0;color:var(--accent);overflow-wrap:anywhere}.contact-note{font-size:13px;margin-top:24px}.contact-form{display:grid;grid-template-columns:1fr 1fr;gap:22px}.field{display:flex;flex-direction:column;gap:9px}.field.full,.form-note,.form-status,.form-actions{grid-column:1/-1}.field label{font-size:12px;color:var(--muted)}input,textarea,select{width:100%;border:1px solid var(--border);border-radius:10px;background:var(--surface);color:var(--text);padding:13px 15px;min-height:50px}textarea{min-height:145px;resize:vertical}input::placeholder,textarea::placeholder{color:#a69b91}.form-note{font-size:12px}.form-status{font-size:13px;color:var(--accent);min-height:24px}.form-actions{display:flex;flex-wrap:wrap;gap:12px}.article{max-width:760px;margin:auto;padding:70px 0 100px}.article h1{font-size:clamp(40px,5vw,65px);margin:25px 0}.article .lead{font-size:20px;margin-bottom:40px}.article h2{font-size:30px;margin:42px 0 18px}.article p{margin-top:18px}.article li{color:var(--muted);margin-block:12px}.article .back{margin-top:40px}.filter-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:35px}.filter-row button{padding:11px 20px;min-height:44px;border:1px solid var(--border);border-radius:100px;color:var(--text);background:transparent;font-size:12px}.filter-row button[aria-pressed=true]{background:var(--accent);color:var(--ink);border-color:var(--accent)}[hidden]{display:none!important}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}.reveal{animation:arrive .65s var(--ease) both}@keyframes arrive{from{transform:translateY(15px)}to{transform:none}}
+@media(min-width:1450px){.nav{gap:28px}.nav a{font-size:12px}.hero-content{padding-top:90px}.hero{min-height:710px}.hero-art{right:-9%;width:63%}}
+@media(max-width:1100px){.nav{gap:15px}.nav a{font-size:10px}.wordmark{font-size:16px}.site-header{gap:18px}.brand-logo{width:190px;height:auto}.hero{min-height:620px}.hero-art{right:-23%;width:77%;opacity:.85}.services{grid-template-columns:1fr 1fr}.service-card:last-child{grid-column:1/-1;min-height:250px}.service-card:last-child .card-top{margin-bottom:25px}.approach-copy{padding:48px 36px}.split,.contact-grid{gap:50px}.work-band{padding:48px;gap:35px}}
+@media(max-width:900px){.menu-toggle{display:flex}.site-header{height:84px}.nav{position:fixed;inset:84px 0 0;background:var(--bg);z-index:20;display:none;padding:25px 32px 45px;flex-direction:column;align-items:stretch;justify-content:flex-start;overflow:auto;gap:2px}.nav.open{display:flex}.nav a{font-size:22px;padding:12px 0;min-height:60px;border-bottom:1px solid var(--border)}.nav .nav-contact{font-size:22px;padding:16px 24px;margin-top:15px;justify-content:space-between}.hero-content{padding-top:65px}.hero h1{font-size:68px}.hero-art{right:-35%;width:95%;opacity:.55}.section{padding-block:75px}.section-head{gap:30px}.approach{grid-template-columns:1fr 1fr}.cup-visual{min-height:400px}.cup-visual svg{width:200px}.approach-copy{padding:40px 30px}.approach-copy h2{font-size:36px}.steps{gap:25px}.work-band{grid-template-columns:1fr}.journal-grid{grid-template-columns:1fr 1fr}.journal-card:last-child{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:25px}.journal-card:last-child .journal-art{grid-row:1/5;height:100%;min-height:200px}.journal-card:last-child .eyebrow{margin-top:0}.journal-card:last-child .text-link{margin-top:0}.journal-card:last-child p{margin-top:0}.split,.contact-grid{grid-template-columns:1fr;gap:40px}.split h2{max-width:20ch}.inner-hero h1{font-size:64px}.cta{align-items:start;flex-direction:column}}
+@media(max-width:620px){.wrap{width:calc(100% - 36px)}.site-header{height:78px}.brand-logo{width:180px;height:auto}.nav{top:78px;padding-inline:24px}.hero{min-height:740px;border-radius:22px}.hero-content{padding:40px 24px 310px;text-align:center}.hero h1{font-size:clamp(36px,10vw,52px);max-width:15ch;margin:24px auto 23px}.hero .intro{font-size:14px;margin-inline:auto;max-width:32ch}.hero .eyebrow{font-size:9px;letter-spacing:.1em}.hero .eyebrow::before{margin-right:7px}.hero .actions{justify-content:center;gap:10px;margin-top:25px}.hero .btn{min-height:48px;padding:11px 16px;gap:13px;font-size:11px}.hero-art{width:114%;max-width:none;height:380px;top:auto;bottom:15px;right:-7%;opacity:.9}.hero-meta{bottom:22px;font-size:8px;padding-top:17px;left:24px;right:24px}.hero-meta span:nth-child(2){display:none}.pill-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:24px 8px}.pill-row span{font-size:8px}.pill-row b{display:none}.section{padding-block:60px}.section-head{grid-template-columns:1fr;gap:22px;margin-bottom:30px}.section-head p{justify-self:start;font-size:14px}.section-head h2{max-width:15ch}.services{grid-template-columns:1fr;gap:14px}.service-card:last-child{grid-column:auto;min-height:310px}.service-card{padding:27px;min-height:310px}.card-top,.service-card:last-child .card-top{margin-bottom:32px}.approach{grid-template-columns:1fr}.cup-visual{min-height:295px}.cup-visual svg{width:190px}.approach-copy{padding:32px 27px 38px}.approach-copy h2{font-size:35px}.steps{grid-template-columns:1fr;gap:30px}.step{display:grid;grid-template-columns:32px 1fr;column-gap:12px}.step .number{padding-top:5px;grid-row:1/3}.step h3{margin:0 0 10px}.step p{grid-column:2}.work-band{padding:36px 27px;gap:26px;border-radius:22px}.work-band p{font-size:14px}.journal-grid{grid-template-columns:1fr;gap:36px}.journal-card:last-child{display:block;grid-column:auto}.journal-card:last-child .journal-art{height:215px}.journal-card:last-child .eyebrow{margin-top:23px}.journal-card:last-child p{margin-top:16px}.journal-card:last-child .text-link{margin-top:14px}.journal-card h3{font-size:23px}.cta{padding-block:50px;gap:28px}.footer-top{grid-template-columns:1fr;gap:28px}.footer-bottom{align-items:start;flex-direction:column;gap:8px;margin-top:28px;padding:22px 0}.inner-hero{padding:25px 0 45px}.breadcrumb{margin-bottom:20px}.inner-hero h1{font-size:clamp(42px,11vw,60px);max-width:15ch}.inner-hero .lead{font-size:16px}.inner-hero .eyebrow{font-size:10px}.soft-panel{padding:28px}.contact-form{grid-template-columns:1fr}.field{grid-column:1}.contact-grid{gap:40px}.article{padding-top:35px}.article h1{font-size:42px}.article .lead{font-size:17px}.article h2{font-size:28px}.form-actions{flex-direction:column}.detail-list li{gap:8px}.eyebrow{font-size:10px}.footer-links{column-gap:18px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+.footer-policy-links{display:flex;align-items:center;gap:18px;flex-wrap:wrap}.footer-policy-links a{display:inline-flex}.wr-article {
+    --ink:#f5f1e9; --body:#ded7ce; --muted:#bcb5ac; --line:#443b33;
+    --accent:#FC630F; --accent2:#FF9B61; --fill:#26221e; --warn:#ffb36b;
+  }
+.wr-article * {box-sizing:border-box;}
+.wr-article {margin:0;background:linear-gradient(145deg,#1c1a18,#171513);color:var(--body);
+    border:1px solid var(--border);font-family:var(--display);font-size:18px;line-height:1.72;}
+.wr-article .wrap {width:100%;max-width:820px;margin:0 auto;padding:clamp(42px,6vw,72px) clamp(28px,6.5vw,76px) clamp(64px,8vw,100px);}
+.wr-article header {margin-bottom:34px;}
+.wr-article .kicker {font:12px/1.5 var(--mono);letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent);margin:0 0 14px;}
+.wr-article h1 {font-family:var(--display);font-size:clamp(38px,5vw,58px);line-height:1.08;
+    color:var(--ink);margin:0 0 22px;letter-spacing:-.045em;font-weight:500;}
+.wr-article .deck {font-size:21px;line-height:1.55;color:var(--muted);margin:0 0 22px;font-style:normal;}
+.wr-article .byline {font:12px/1.6 var(--mono);letter-spacing:.04em;color:var(--muted);
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:10px 0;}
+.wr-article h2 {font-family:var(--display);font-size:clamp(27px,3.4vw,36px);line-height:1.2;color:var(--ink);
+    margin:54px 0 18px;letter-spacing:-.035em;font-weight:550;}
+.wr-article p {margin:0 0 20px;color:var(--body);max-width:none;}
+.wr-article a {color:var(--accent2);text-decoration:underline;text-decoration-color:#FC630F70;text-underline-offset:3px;}
+.wr-article a:hover {color:var(--accent);text-decoration-color:var(--accent);}
+.wr-article blockquote {margin:26px 0;padding:4px 0 4px 20px;border-left:3px solid var(--accent);
+    font-size:19px;font-style:italic;color:var(--ink);}
+.wr-article blockquote p {margin-bottom:8px;}
+.wr-article blockquote cite {font-size:14px;font-style:normal;color:var(--muted);}
+.wr-article figure {--ink:#14181d;--body:#2a3138;--muted:#5d6670;--line:#d9dde2;--fill:#f4f5f7;
+    margin:38px 0;border:1px solid #d9dde2;border-radius:12px;padding:20px 20px 14px;background:#fff;color:var(--body);overflow:hidden;}
+.wr-article figcaption {font-family:"Helvetica Neue",Arial,sans-serif;font-size:12.5px;color:var(--muted);
+    line-height:1.5;margin-top:12px;border-top:1px solid var(--line);padding-top:10px;}
+.wr-article figcaption .ft {display:block;color:var(--ink);font-weight:bold;font-size:13px;margin-bottom:3px;}
+.wr-article .chart-scroll {overflow-x:auto;}
+.wr-article svg {display:block;max-width:100%;height:auto;}
+.wr-article svg text {font-family:"Helvetica Neue",Arial,sans-serif;}
+.wr-article .note {font-family:"Helvetica Neue",Arial,sans-serif;font-size:13px;color:var(--muted);
+    background:var(--fill);border:1px solid var(--line);border-radius:8px;padding:14px 16px;margin:0 0 20px;line-height:1.55;}
+.wr-article table {border-collapse:collapse;width:100%;font-family:"Helvetica Neue",Arial,sans-serif;font-size:13.5px;}
+.wr-article th {background:var(--fill);text-align:left;padding:9px 10px;color:var(--ink);
+    border-bottom:2px solid var(--ink);font-size:12.5px;letter-spacing:.02em;}
+.wr-article td {padding:10px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.45;}
+.wr-article td b {color:var(--ink);}
+.wr-article .src {font-family:"Helvetica Neue",Arial,sans-serif;font-size:13.5px;color:var(--muted);line-height:1.7;}
+.wr-article .src h2 {font-size:20px;}
+.wr-article .src ol {padding-left:20px;margin:10px 0;}
+.wr-article .src li {margin-bottom:8px;}
+.wr-article .chain {display:flex;flex-direction:column;gap:0;font-family:"Helvetica Neue",Arial,sans-serif;}
+.wr-article .chain .step {border:1px solid var(--line);border-radius:6px;padding:12px 16px;background:#fff;}
+.wr-article .chain .step b {color:var(--ink);}
+.wr-article .chain .ev {font-size:11.5px;color:var(--muted);display:block;margin-top:4px;}
+.wr-article .chain .arrow {align-self:center;color:var(--muted);font-size:18px;padding:3px 0;}
+@media (max-width:520px) {
+.wr-article {font-size:17px;}
+.wr-article h1 {font-size:36px;}
+.wr-article .deck {font-size:18px;}
+.wr-article h2 {font-size:26px;}
+.wr-article .wrap {padding:34px 22px 64px;}
+  }
+.ast-single-post .entry-header, .single .entry-header { display: none; }
+.wr-article > :is(div, main, article, section):has(h1, h2) { background:transparent; }
+.single article.post { padding-top: 0 !important; } .single #primary { margin-top: 0 !important; }
+.wr-article .byline {display:block;}
+.wr-article h2, .wr-article h3, .wr-article h4 { font-family: inherit; } .wr-article h2 { color: var(--ink); }
+.single #ez-toc-container { display: none !important; }
+.wr-article .wr-lead {margin:30px 0 38px;padding:0;} .wr-article .wr-lead img {width:100%;height:auto;display:block;}
+.wr-article .wr-lead figcaption {margin:0;padding:14px 18px 16px;}
+.research-article{max-width:1040px;margin:auto;padding:45px 0 100px}.research-article>.breadcrumb{margin-bottom:24px}.wr-article{border-radius:var(--radius);overflow:hidden;box-shadow:0 26px 80px #0008}.research-back{margin-top:28px}@media(max-width:620px){.research-article{padding-top:25px}.wr-article{border-radius:22px}.wr-article figure{margin-inline:-4px;padding:14px 10px 12px}.wr-article .wr-lead{margin-inline:0}}
+
+@font-face{font-family:Manrope;src:url('/assets/manrope-latin.woff2') format('woff2');font-weight:200 800;font-display:swap}
+
+.wr-article blockquote {margin:26px 0;padding:4px 0 4px 20px;border-left:3px solid var(--accent);
+    font-size:19px;font-style:italic;color:var(--ink);}
+
+.wr-article blockquote p {margin-bottom:8px;}
+
+.wr-article blockquote cite {font-size:14px;font-style:normal;color:var(--muted);}
+
+.wr-article figure {--ink:#14181d;--body:#2a3138;--muted:#5d6670;--line:#d9dde2;--fill:#f4f5f7;
+    margin:38px 0;border:1px solid #d9dde2;border-radius:12px;padding:20px 20px 14px;background:#fff;color:var(--body);overflow:hidden;}
+
+.wr-article figcaption {font-family:"Helvetica Neue",Arial,sans-serif;font-size:12.5px;color:var(--muted);
+    line-height:1.5;margin-top:12px;border-top:1px solid var(--line);padding-top:10px;}
+
+.wr-article figcaption .ft {display:block;color:var(--ink);font-weight:bold;font-size:13px;margin-bottom:3px;}
+
+.wr-article .chart-scroll {overflow-x:auto;}
+
+.wr-article svg {display:block;max-width:100%;height:auto;}
+
+.wr-article svg text {font-family:"Helvetica Neue",Arial,sans-serif;}
+
+.wr-article .note {font-family:"Helvetica Neue",Arial,sans-serif;font-size:13px;color:var(--muted);
+    background:var(--fill);border:1px solid var(--line);border-radius:8px;padding:14px 16px;margin:0 0 20px;line-height:1.55;}
+
+.wr-article table {border-collapse:collapse;width:100%;font-family:"Helvetica Neue",Arial,sans-serif;font-size:13.5px;}
+
+.wr-article th {background:var(--fill);text-align:left;padding:9px 10px;color:var(--ink);
+    border-bottom:2px solid var(--ink);font-size:12.5px;letter-spacing:.02em;}
+
+.wr-article td {padding:10px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.45;}
+
+.wr-article td b {color:var(--ink);}
+
+.wr-article .src {font-family:"Helvetica Neue",Arial,sans-serif;font-size:13.5px;color:var(--muted);line-height:1.7;}
+
+.wr-article .src h2 {font-size:20px;}
+
+.wr-article .src ol {padding-left:20px;margin:10px 0;}
+
+.wr-article .src li {margin-bottom:8px;}
+
+.wr-article .chain {display:flex;flex-direction:column;gap:0;font-family:"Helvetica Neue",Arial,sans-serif;}
+
+.wr-article .chain .step {border:1px solid var(--line);border-radius:6px;padding:12px 16px;background:#fff;}
+
+.wr-article .chain .step b {color:var(--ink);}
+
+.wr-article .chain .ev {font-size:11.5px;color:var(--muted);display:block;margin-top:4px;}
+
+.wr-article .chain .arrow {align-self:center;color:var(--muted);font-size:18px;padding:3px 0;}
+
+@media (max-width:520px) {
+.wr-article {font-size:17px;}
+
+.wr-article h1 {font-size:36px;}
+
+.wr-article .deck {font-size:18px;}
+
+.wr-article h2 {font-size:26px;}
+
+.wr-article .wrap {padding:34px 22px 64px;}
+
+  }
+
+.ast-single-post .entry-header, .single .entry-header { display: none; }
+
+.wr-article > :is(div, main, article, section):has(h1, h2) { background:transparent; }
+
+.single article.post { padding-top: 0 !important; }
+ .single #primary { margin-top: 0 !important; }
+
+.wr-article .byline {display:block;}
+
+.wr-article h2, .wr-article h3, .wr-article h4 { font-family: inherit; }
+ .wr-article h2 { color: var(--ink); }
+
+.single #ez-toc-container { display: none !important; }
+
+.wr-article .wr-lead {margin:30px 0 38px;padding:0;}
+ .wr-article .wr-lead img {width:100%;height:auto;display:block;}
+
+.wr-article .wr-lead figcaption {margin:0;padding:14px 18px 16px;}
+
+.research-article{max-width:1040px;margin:auto;padding:45px 0 100px}
+.research-article>.breadcrumb{margin-bottom:24px}
+.wr-article{border-radius:var(--radius);overflow:hidden;box-shadow:0 26px 80px #0008}
+.research-back{margin-top:28px}
+@media(max-width:620px){.research-article{padding-top:25px}
+.wr-article{border-radius:22px}
+.wr-article figure{margin-inline:-4px;padding:14px 10px 12px}
+.wr-article .wr-lead{margin-inline:0}
+}
+
+
+.wr-article{--acc:#FC630F;--sec:#5d6670;--panel:#fff;--good:#3d7a48;--bad:#b03a2e;--warn:#9a681f}
+
+.wr-article strong{color:var(--ink);font-weight:700}
+.wr-article ul{margin:0 0 20px 22px}
+.wr-article li{margin-bottom:8px}
+
+.wr-article .fig-title{font-size:16px;font-weight:700;color:var(--ink);margin:0 0 4px}
+.wr-article .fig-sub{color:var(--muted);font-size:13.5px;margin:0 0 20px}
+
+.wr-article .waffle{display:grid;grid-template-columns:repeat(20,1fr);gap:3px;max-width:460px}
+.wr-article .waffle span{aspect-ratio:1;border-radius:1px}
+.wr-article .w-never{background:#d4d0ca}
+.wr-article .w-stall{background:#8a5a3b}
+.wr-article .w-prod{background:var(--acc)}
+
+.wr-article .waffle-legend{display:flex;flex-wrap:wrap;gap:16px;margin-top:16px;font-size:13px;color:var(--muted)}
+.wr-article .waffle-legend b{color:var(--ink)}
+.wr-article .lg{display:inline-block;width:11px;height:11px;border-radius:1px;margin-right:6px;vertical-align:-1px}
+
+.wr-article .brow{display:grid;grid-template-columns:170px 1fr;gap:12px;align-items:center;margin-bottom:14px}
+.wr-article .brow .lab{font-size:14px;color:var(--ink)}
+.wr-article .brow .lab small{display:block;color:var(--muted);font-size:12px}
+.wr-article .track{background:#e7e3de;border-radius:2px;height:26px;position:relative;overflow:visible}
+.wr-article .fill{height:100%;border-radius:2px}
+.wr-article .val{position:absolute;top:50%;transform:translateY(-50%);font-size:13px;font-weight:700;white-space:nowrap}
+
+.wr-article .db{margin-bottom:18px}
+.wr-article .db .lab{font-size:14px;margin-bottom:6px}
+.wr-article .db .lab small{color:var(--muted);font-size:12px}
+.wr-article .dbline{position:relative;height:36px}
+.wr-article .dbline .rail{position:absolute;top:50%;height:2px;background:#aaa29a;transform:translateY(-50%)}
+.wr-article .dbline .dot{position:absolute;top:50%;width:13px;height:13px;border-radius:50%;transform:translate(-50%,-50%)}
+.wr-article .dot-25{background:#777}
+.wr-article .dot-26{background:var(--acc)}
+.wr-article .dbline .dv{position:absolute;top:50%;transform:translateY(-50%);font-size:12.5px;font-weight:700}
+.wr-article .db-key{font-size:12.5px;color:var(--muted);margin-top:8px}
+
+.wr-article .gset{margin-bottom:16px}
+.wr-article .gset .lab{font-size:14px;margin-bottom:5px}
+.wr-article .gset .lab small{color:var(--muted);font-size:12px}
+.wr-article .gbar{height:18px;border-radius:2px;margin:3px 0;position:relative}
+.wr-article .gval{font-size:12.5px;font-weight:700;margin-left:8px;color:var(--ink)}
+
+.wr-article .chip{display:inline-block;padding:2px 9px;border-radius:4px;font-size:12px;font-weight:700;white-space:nowrap}
+.wr-article .c-wrong{background:#f8d9d4;color:#8f2e20;border:1px solid #d89186}
+.wr-article .c-held{background:#dceade;color:#2e6337;border:1px solid #8fba96}
+.wr-article .c-mixed{background:#f4e5c5;color:#775017;border:1px solid #d4aa5d}
+
+.wr-article .chain{display:flex;flex-direction:column;gap:0}
+.wr-article .chain .step{border:1px solid var(--line);border-radius:6px;padding:14px 16px;background:#fff;display:flex;flex-direction:column}
+.wr-article .step-num{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--acc);margin-bottom:6px}
+.wr-article .chain .step b{color:var(--ink);font-size:13.5px;margin-bottom:6px}
+.wr-article .step-desc{font-size:12.5px;line-height:1.45;color:var(--muted);margin:0}
+.wr-article .step-connector{padding-top:8px;font-size:16px;color:var(--acc);font-weight:700;text-align:center;transform:rotate(90deg)}
+
+.wr-article .pullquote{border-left:3px solid var(--accent);padding:6px 0 6px 22px;margin:34px 0;font-size:21px;line-height:1.5;color:var(--ink);font-weight:500}
+.wr-article .pullquote cite{display:block;font-size:14px;color:var(--muted);margin-top:8px;font-style:normal;font-weight:400}
+.wr-article .sourcenote{font-size:13px;color:var(--muted);margin-top:52px;border-top:1px solid var(--line);padding-top:18px}
+
+@media(max-width:620px){.wr-article .brow{grid-template-columns:1fr;gap:5px}
+.wr-article .track{margin-bottom:8px}
+.wr-article .waffle{gap:2px}
+.wr-article .chip{white-space:normal}
+.wr-article .dbline .dv{font-size:11px}
+.wr-article table{font-size:12px}
+.wr-article th,.wr-article td{padding:8px 6px}
+}
+
+</style><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://coffeecupai.com/#organization","name":"Coffee Cup AI","url":"https://coffeecupai.com/","email":"dan@CoffeeCupAI.com","description":"Practical AI consulting, speaking, audits, and guidance focused on clear thinking and human judgment.","logo":{"@id":"https://coffeecupai.com/#logo"},"knowsAbout":["Artificial intelligence","AI for business","AI consulting","Enterprise AI adoption","AI ROI","Workflow redesign"]},{"@type":"ImageObject","@id":"https://coffeecupai.com/#logo","url":"https://coffeecupai.com/assets/coffee-cup-ai-logo-humans-own-ai.svg","contentUrl":"https://coffeecupai.com/assets/coffee-cup-ai-logo-humans-own-ai.svg","width":217,"height":44,"caption":"Coffee Cup AI — Humans Own AI"},{"@type":"WebSite","@id":"https://coffeecupai.com/#website","url":"https://coffeecupai.com/","name":"Coffee Cup AI","publisher":{"@id":"https://coffeecupai.com/#organization"},"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://coffeecupai.com/blog/95-ai-failure-stat-one-year-later-junk/#primaryimage","url":"https://coffeecupai.com/assets/95-ai-failure-stat-one-year-later-junk-thumb.jpg","contentUrl":"https://coffeecupai.com/assets/95-ai-failure-stat-one-year-later-junk-thumb.jpg","width":1200,"height":675,"caption":"AI pilot failure analysis with notebook funnel diagram and coffee cup"},{"@type":"ImageObject","@id":"https://coffeecupai.com/blog/95-ai-failure-stat-one-year-later-junk/#leadimage","url":"https://coffeecupai.com/assets/95-ai-failure-stat-one-year-later-junk-lead.jpg","contentUrl":"https://coffeecupai.com/assets/95-ai-failure-stat-one-year-later-junk-lead.jpg","width":1536,"height":864,"caption":"Executive boardroom reviewing enterprise AI pilot ROI and adoption data"},{"@type":"BreadcrumbList","@id":"https://coffeecupai.com/blog/95-ai-failure-stat-one-year-later-junk/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://coffeecupai.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://coffeecupai.com/blog/"},{"@type":"ListItem","position":3,"name":"The 95% AI failure stat, one year later: junk number, real problem","item":"https://coffeecupai.com/blog/95-ai-failure-stat-one-year-later-junk/"}]},{"@type":"WebPage","@id":"https://coffeecupai.com/blog/95-ai-failure-stat-one-year-later-junk/#webpage","url":"https://coffeecupai.com/blog/95-ai-failure-stat-one-year-later-junk/","name":"AI Pilot Failure Rate: MIT's 95% Claim Revisited | Coffee Cup AI","description":"MIT's 95% AI pilot failure claim was flawed. New McKinsey, Deloitte and Capgemini data shows why enterprise AI still stalls before measurable ROI.","isPartOf":{"@id":"https://coffeecupai.com/#website"},"about":{"@id":"https://coffeecupai.com/#organization"},"breadcrumb":{"@id":"https://coffeecupai.com/blog/95-ai-failure-stat-one-year-later-junk/#breadcrumb"},"primaryImageOfPage":{"@id":"https://coffeecupai.com/blog/95-ai-failure-stat-one-year-later-junk/#primaryimage"},"mainEntity":{"@id":"https://coffeecupai.com/blog/95-ai-failure-stat-one-year-later-junk/#article"},"inLanguage":"en-US"},{"@type":"BlogPosting","@id":"https://coffeecupai.com/blog/95-ai-failure-stat-one-year-later-junk/#article","url":"https://coffeecupai.com/blog/95-ai-failure-stat-one-year-later-junk/","mainEntityOfPage":{"@id":"https://coffeecupai.com/blog/95-ai-failure-stat-one-year-later-junk/#webpage"},"headline":"The 95% AI failure stat, one year later: junk number, real problem","alternativeHeadline":"MIT's 95 percent AI pilot failure statistic revisited with 2026 enterprise data","description":"MIT's 95% AI pilot failure claim was flawed. New McKinsey, Deloitte and Capgemini data shows why enterprise AI still stalls before measurable ROI.","image":[{"@id":"https://coffeecupai.com/blog/95-ai-failure-stat-one-year-later-junk/#primaryimage"},{"@id":"https://coffeecupai.com/blog/95-ai-failure-stat-one-year-later-junk/#leadimage"}],"thumbnailUrl":"https://coffeecupai.com/assets/95-ai-failure-stat-one-year-later-junk-thumb.jpg","datePublished":"2026-10-29T16:57:00-06:00","dateModified":"2026-10-29T16:57:00-06:00","author":{"@id":"https://coffeecupai.com/#organization"},"publisher":{"@id":"https://coffeecupai.com/#organization"},"isPartOf":{"@id":"https://coffeecupai.com/#website"},"articleSection":"AI Strategy","keywords":["AI pilot failure rate","enterprise AI adoption","AI consulting","AI ROI","generative AI pilots","workflow redesign","MIT NANDA report","measurable business value"],"about":[{"@type":"Thing","name":"Enterprise artificial intelligence"},{"@type":"Thing","name":"AI pilot failure rate"},{"@type":"Thing","name":"AI return on investment"},{"@type":"Thing","name":"Workflow redesign"},{"@type":"Thing","name":"Generative AI adoption"},{"@type":"Thing","name":"AI consulting"}],"mentions":[{"@type":"Organization","name":"Massachusetts Institute of Technology","url":"https://www.mit.edu/"},{"@type":"Organization","name":"McKinsey & Company","url":"https://www.mckinsey.com/"},{"@type":"Organization","name":"Deloitte","url":"https://www.deloitte.com/"},{"@type":"Organization","name":"Capgemini","url":"https://www.capgemini.com/"},{"@type":"Organization","name":"United States Census Bureau","url":"https://www.census.gov/"},{"@type":"Organization","name":"Eurostat","url":"https://ec.europa.eu/eurostat/"}],"wordCount":2522,"citation":["https://finance.yahoo.com/news/mit-report-95-ai-pilots-165754716.html","https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf","https://forum.effectivealtruism.org/posts/q92qq7XCCLJonA6CH/the-story-behind-the-bad-ai-stat-that-moved-markets-and","https://www.digital-chiefs.de/en/mckinsey-eight-out-of-ten-companies-accelerate-with-ai-while-ebit-remains/","https://itechnosol.com/research/ai-adoption-mid-size-businesses/","https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai","https://www.deloitte.com/us/en/about/press-room/state-of-ai-report-2026.html","https://www.capgemini.com/insights/research-library/ai-perspectives-2026/","https://www.gartner.com/en/newsroom/press-releases/2024-07-29-gartner-predicts-30-percent-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept-by-end-of-2025"],"inLanguage":"en-US"}]}</script><script src="/assets/site.js" defer></script></head><body><a class="skip" href="#main">Skip to content</a><header class="site-header wrap"><a class="brand" href="/" aria-label="Coffee Cup AI home"><img class="brand-logo" src="/assets/coffee-cup-ai-logo-humans-own-ai.svg" width="217" height="44" alt="Coffee Cup AI — Humans Own AI"></a><button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="main-nav">☰</button><nav class="nav" id="main-nav" aria-label="Main navigation"><a href="/about/">About Coffee Cup AI</a><a href="/ai-consulting/">AI Consulting</a><a href="/ai-speaker/">AI Speaker</a><a href="/ai-audits/">AI Audits</a><a href="/ai-job-loss/">AI Job Loss</a><a href="/blog/">Blog</a><a href="/contact/" class="nav-contact">Contact<span class="arrow" aria-hidden="true">↗</span></a></nav></header><main id="main"><article class="research-article wrap"><div class="breadcrumb"><a href="/blog/">Coffee Cup notes</a><span>/</span><span>Future of Work</span></div><div class="wr-article">
+<div class="wrap">
+<p class="kicker">AI ROI &middot; Data study</p>
+<h1>The 95% AI failure stat, one year later: junk number, real problem</h1>
+<p class="deck">MIT's claim that 95% of AI pilots fail rested on a misread funnel and 153 survey responses. The 2026 critiques dismantled the number. But a full year of follow-up data from McKinsey, Deloitte, Capgemini, and government statistics shows the diagnosis behind it largely held up. Here is the ledger.</p>
+<p class="byline">Coffee Cup AI &middot; October 29, 2026 &middot; 12 min read</p>
+
+<figure class="wr-lead">
+<img src="/assets/95-ai-failure-stat-one-year-later-junk-lead.jpg" alt="Executive boardroom reviewing enterprise AI pilot ROI and adoption data" title="Enterprise AI pilot failure rate and measurable ROI" width="1536" height="864" fetchpriority="high">
+<figcaption>
+<span class="ft">Enterprise AI adoption is rising faster than measurable financial returns.</span> New evidence separates a flawed 95 percent failure statistic from the workflow and measurement problems that continue to stall AI ROI.</figcaption>
+</figure>
+
+<p>In August 2025, a 26-page preliminary report from MIT's NANDA initiative became essential reading for <a href="/ai-consulting/">AI consulting and implementation planning</a>. It claimed that 95% of enterprise generative AI pilots were failing, delivering little or no measurable impact on profit and loss despite $30&ndash;40 billion in cumulative spending. Fortune published the headline on a Monday. Yahoo Finance reported that the MIT number <a href="https://finance.yahoo.com/news/mit-report-95-ai-pilots-165754716.html">had spooked investors</a>. By Friday the figure had been repeated by Forbes, Axios, and Harvard Business Review, had anchored a popular thread on r/stocks titled "The actual reason Nasdaq dropped today," and had become the single most-cited data point in the argument that AI was overhyped.</p>
+
+<p>Fifteen months later, the data cycle is complete. McKinsey surveyed 1,719 executives across 97 countries in mid-2026. Deloitte fielded its annual enterprise AI study. Capgemini surveyed 1,500 leaders across 15 countries. The US Census Bureau, the UK Office for National Statistics, and Eurostat all published economy-wide adoption counts. And one podcaster read the MIT report closely enough to show that the headline number described something that never happened.</p>
+
+<p>The 95% figure was junk: it was computed from a denominator the report never justified, by authors with a commercial interest in the solution it recommended. The pattern the figure pointed at, though, survived the year in dataset after dataset. Most enterprise AI spending still has not reached the P&amp;L, the gap sits in workflows and measurement rather than in models, and executives' picture of AI adoption is roughly four times rosier than the picture drawn by government business registers.</p>
+
+<h2>How a misread funnel became the most famous number in AI</h2>
+
+<p>
+<a href="https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf">The GenAI Divide: State of AI in Business 2025</a> was explicit, on its first page, that it reported "preliminary findings." Its method: a review of roughly 300 publicly disclosed AI initiatives, interviews with 52 organizations, and 153 survey responses collected at industry conferences. The authors, Aditya Challapally, Chris Pease, Ramesh Raskar, and Pradyumna Chari, wrote that 95% of organizations were getting zero return from generative AI.</p>
+
+<p>In February 2026, Rob Wiblin of 80,000 Hours published <a href="https://forum.effectivealtruism.org/posts/q92qq7XCCLJonA6CH/the-story-behind-the-bad-ai-stat-that-moved-markets-and">a line-by-line rereading</a> of the report. His central finding: the 95% was not a failure rate among pilots. Roughly four out of five organizations in the survey had never run a custom, task-specific generative AI pilot at all. The report counted every one of those non-starters as a failure and divided by the total. Wiblin's analogy: reporting that 95% of a dating app's users have failing marriages when 80% of them never went on a date.</p>
+
+<figure data-visual-form="waffle-chart annotation-layers">
+  <p class="fig-title">The funnel that produced "95%"</p>
+  <p class="fig-sub">One square per surveyed organization, as reconstructed from the report's own survey by its critics. The headline divided everything outside the orange squares by the whole grid.</p>
+  <div class="waffle" role="img" aria-label="100 squares: 80 gray never piloted, 15 brown piloted without reaching production, 5 orange reached working deployment">
+    <span class="w-never">
+</span>
+<span class="w-never">
+</span>
+<span class="w-never">
+</span>
+<span class="w-never">
+</span>
+<span class="w-never">
+</span>
+<span class="w-never">
+</span>
+<span class="w-never">
+</span>
+<span class="w-never">
+</span>
+<span class="w-never">
+</span>
+<span class="w-never">
+</span>
+<span class="w-never">
+</span>
+<span class="w-never">
+</span>
+    <span class="w-stall">
+</span>
+<span class="w-stall">
+</span>
+<span class="w-stall">
+</span>
+<span class="w-stall">
+</span>
+<span class="w-stall">
+</span>
+<span class="w-stall">
+</span>
+<span class="w-stall">
+</span>
+<span class="w-stall">
+</span>
+<span class="w-stall">
+</span>
+<span class="w-stall">
+</span>
+<span class="w-stall">
+</span>
+<span class="w-stall">
+</span>
+<span class="w-stall">
+</span>
+<span class="w-stall">
+</span>
+<span class="w-stall">
+</span>
+<span class="w-prod">
+</span>
+<span class="w-prod">
+</span>
+<span class="w-prod">
+</span>
+<span class="w-prod">
+</span>
+<span class="w-prod">
+</span>
+  </div>
+  <div class="waffle-legend">
+    <span>
+<span class="lg" style="background:#3a352e">
+</span>
+<b>Never piloted custom task-specific GenAI</b> (~80 of 100)</span>
+    <span>
+<span class="lg" style="background:#8a5a3b">
+</span>
+<b>Piloted, no successful deployment</b> (~15)</span>
+    <span>
+<span class="lg" style="background:#FC630F">
+</span>
+<b>Working deployment</b> (~5)</span>
+  </div>
+  <figcaption>Proportions approximate the breakdown Wiblin reconstructed from the report's survey tables; the report itself did not publish the funnel in this form. Critiques also note that surveyed organizations skewed more satisfied than dissatisfied with their AI implementations, and that pilots stalled most often over organizations' unwillingness to adopt new tools rather than over the tools' performance.</figcaption>
+</figure>
+
+<p>The critiques went further. The report's own survey data, Wiblin noted, showed more organizations satisfied with their implementations than dissatisfied. The authors did not disclose that several of them develop and sell the agentic-AI infrastructure the report recommends as the fix, a conflict of interest that matters because the report's most quotable sub-finding was that externally purchased and partnered AI solutions succeed about 67% of the time while internal builds succeed about a third as often. A study recommending that companies buy from outside vendors, produced by people selling to those companies, deserves more scrutiny than a press-release funnel received before the number moved markets.</p>
+
+<div class="pullquote">The real lesson isn't about artificial intelligence. It's how a confusing report based on 52 interviews and 153 survey results could get the MIT stamp, go viral through Fortune, and move the Nasdaq before anyone read it.<cite>Rob Wiblin, 80,000 Hours, April 2026</cite>
+</div>
+
+<p>So the number deserves no weight in any budget decision you make this quarter. But dismissing it wholesale would repeat the original error in reverse, because the report also made claims about <em>why</em> AI projects stall. Those claims are testable, and a year of independent data has now tested them.</p>
+
+<h2>What the 2026 data shows: the ledger</h2>
+
+<p>McKinsey's State of AI 2026 survey, fielded in May and June 2026 across 1,719 participants in 97 countries, is the cleanest follow-up available. Its headline pair: roughly 88% of organizations now use AI regularly in at least one function, while only 37% report any positive contribution to EBIT, <a href="https://www.digital-chiefs.de/en/mckinsey-eight-out-of-ten-companies-accelerate-with-ai-while-ebit-remains/">exactly the same share as the year before</a>. Six percent of organizations qualify as high performers, attributing at least 5% of operating profit to AI, also unchanged. Meanwhile 80% of individual respondents say AI has made their own work faster.</p>
+
+<figure data-visual-form="annotated-bar-rows">
+  <p class="fig-title">The adoption&ndash;impact gap, measured</p>
+  <p class="fig-sub">McKinsey State of AI 2026, n = 1,719 across 97 countries. Each bar is a different question, asked of the same respondents.</p>
+  <div class="brow">
+<div class="lab">Use AI regularly<small>in at least one function</small>
+</div>
+<div class="track">
+<div class="fill" style="width:88%; background:#f5f1e9;">
+</div>
+<span class="val" style="right:6px; color:#121110;">88%</span>
+</div>
+</div>
+  <div class="brow">
+<div class="lab">Personally faster<small>AI accelerated their own work</small>
+</div>
+<div class="track">
+<div class="fill" style="width:80%; background:#f5f1e9;">
+</div>
+<span class="val" style="right:6px; color:#121110;">80%</span>
+</div>
+</div>
+  <div class="brow">
+<div class="lab">Positive EBIT impact<small>any measurable contribution</small>
+</div>
+<div class="track">
+<div class="fill" style="width:37%; background:var(--acc);">
+</div>
+<span class="val" style="left:calc(37% + 8px); color:var(--ink);">37%</span>
+</div>
+</div>
+  <div class="brow">
+<div class="lab">High performers<small>&ge;5% of EBIT attributed to AI</small>
+</div>
+<div class="track">
+<div class="fill" style="width:6%; background:var(--acc);">
+</div>
+<span class="val" style="left:calc(6% + 8px); color:var(--ink);">6%</span>
+</div>
+</div>
+  <figcaption>Adoption and self-reported speed are near-saturated; financial impact is flat. The 51-point drop between "personally faster" and "positive EBIT" is the distance the money still has to travel. Source: McKinsey, The State of AI 2026.</figcaption>
+</figure>
+
+<figure data-visual-form="dumbbell-chart reference-lines">
+  <p class="fig-title">One year later: what moved and what didn't</p>
+  <p class="fig-sub">McKinsey surveys, 2025 vs 2026. Gray dot: prior year. Orange dot: 2026.</p>
+  <div class="db">
+    <div class="lab">Organizations reporting positive EBIT impact <small>flat year over year</small>
+</div>
+    <div class="dbline">
+<div class="rail" style="left:0; width:37%;">
+</div>
+<span class="dot dot-26" style="left:37%;">
+</span>
+<span class="dv" style="left:37%; margin-left:14px; margin-top:-18px;">37% &rarr; 37%</span>
+</div>
+  </div>
+  <div class="db">
+    <div class="lab">High performers (&ge;5% of EBIT from AI) <small>flat year over year</small>
+</div>
+    <div class="dbline">
+<div class="rail" style="left:0; width:6%;">
+</div>
+<span class="dot dot-26" style="left:6%;">
+</span>
+<span class="dv" style="left:6%; margin-left:14px; margin-top:-18px;">6% &rarr; 6%</span>
+</div>
+  </div>
+  <div class="db">
+    <div class="lab">High performers redesigning workflows around AI <small>up 20 points</small>
+</div>
+    <div class="dbline">
+<div class="rail" style="left:55%; width:20%;">
+</div>
+<span class="dot dot-25" style="left:55%;">
+</span>
+<span class="dot dot-26" style="left:75%;">
+</span>
+<span class="dv" style="left:75%; margin-left:14px; margin-top:-18px;">55% &rarr; ~75%</span>
+</div>
+  </div>
+  <div class="db">
+    <div class="lab">Headcount actually reduced by AI <small>against 32% who had expected it</small>
+</div>
+    <div class="dbline">
+<div class="rail" style="left:14%; width:18%;">
+</div>
+<span class="dot dot-25" style="left:32%;">
+</span>
+<span class="dot dot-26" style="left:14%;">
+</span>
+<span class="dv" style="left:32%; margin-left:14px; margin-top:-18px;">32% expected &rarr; 14% experienced</span>
+</div>
+  </div>
+  <figcaption>Financial outcomes did not move at all in a year of sharply rising usage. The variables that did move were workflow redesign among high performers and the gap between expected and experienced headcount effects. Source: McKinsey, The State of AI 2026 (May&ndash;June 2026).</figcaption>
+</figure>
+
+<p>That gives five testable claims from the original report, and a year of independent data to grade them against.</p>
+
+<figure data-visual-form="data-table highlighted-excerpt">
+  <p class="fig-title">The verdict ledger: five claims from the 95% report, graded by 2026 data</p>
+  <table>
+    <thead>
+<tr>
+<th style="width:24%;">MIT claim, 2025</th>
+<th style="width:56%;">What the 2026 data shows</th>
+<th>Verdict</th>
+</tr>
+</thead>
+    <tbody>
+      <tr>
+        <td>95% of GenAI pilots fail</td>
+        <td class="ev">The figure misread the report's own funnel; ~80% of surveyed orgs never piloted custom GenAI. No 2026 dataset reproduces it: 37&ndash;39% of large organizations report some EBIT impact (McKinsey), 66% report measurable productivity and decision-quality gains (Capgemini), while 25% have moved at least 40% of pilots into production (Deloitte).</td>
+        <td>
+<span class="chip c-wrong">Wrong as stated</span>
+</td>
+      </tr>
+      <tr>
+        <td>The bottleneck is organizational: the "learning gap," not model quality</td>
+        <td class="ev">Held up across every major survey. 80% of individuals work faster while EBIT stays flat. High performers redesign workflows ~3x more often than the rest (~75% vs ~25%). Gartner predicts over 40% of agentic AI projects will be canceled or re-architected by end of 2027, citing unclear business value and weak integration.</td>
+        <td>
+<span class="chip c-held">Held up</span>
+</td>
+      </tr>
+      <tr>
+        <td>Money goes to sales and marketing; the returns sit in back-office automation</td>
+        <td class="ev">The misallocation persists: Capgemini (Jan 2026) finds more than half of organizations still prioritize AI investment in sales, marketing, and IT operations. Whether back office still pays better is unresolved by 2026 data; budgets have not been rebalanced either way.</td>
+        <td>
+<span class="chip c-mixed">Behavior persists; returns unresolved</span>
+</td>
+      </tr>
+      <tr>
+        <td>Buying from vendors succeeds ~67% of the time; building in-house ~33%</td>
+        <td class="ev">Contested at the time (conflicted authors, opaque data) and partly overtaken by events: McKinsey 2026 finds 32% of organizations declined to buy at least one software product because coding agents built the functionality in-house. The build-versus-buy boundary is moving, not settled in vendors' favor.</td>
+        <td>
+<span class="chip c-wrong">Contested, then mooted</span>
+</td>
+      </tr>
+      <tr>
+        <td>Shadow AI is everywhere: employees run unsanctioned tools</td>
+        <td class="ev">Held up. UK ONS (July 2026): 35% of businesses use at least one AI technology, the average adopter uses 1.6, and only 10% describe use as extensive, meaning most usage is informal and lightly governed rather than enterprise-deployed.</td>
+        <td>
+<span class="chip c-held">Held up</span>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>Sources: McKinsey State of AI 2026 and 2025; Deloitte State of AI in the Enterprise, Jan 2026; Capgemini Research Institute, Jan 2026; Gartner, June 2025; UK ONS, July 2026; Wiblin's reconstruction of the MIT NANDA survey.</figcaption>
+</figure>
+
+<h2>The perception gap nobody quotes</h2>
+
+<p>One finding in the 2026 data deserves more attention than it has received: the population that believes AI adoption is universal is not the population where adoption is universal. Executive surveys and business registers are describing different economies.</p>
+
+<figure data-visual-form="grouped-bar-chart contrast-visual">
+  <p class="fig-title">Two pictures of AI adoption</p>
+  <p class="fig-sub">Executive surveys versus government business registers, 2026. "Mid-size/large" shows the rate for bigger firms where the surveys' respondents actually work.</p>
+  <div class="gset">
+    <div class="lab">McKinsey survey of executives <small>use AI regularly in at least one function</small>
+</div>
+    <div class="gbar" style="width:88%; background:var(--acc);">
+<span class="gval" style="color:#121110; position:absolute; right:8px; top:0;">88%</span>
+</div>
+  </div>
+  <div class="gset">
+    <div class="lab">US Census Bureau, May 2026 <small>all US businesses; 37% among firms with 250+ staff</small>
+</div>
+    <div class="gbar" style="width:20%; background:#8a8178;">
+<span class="gval" style="position:absolute; left:calc(20% + 8px); top:0;">17&ndash;20%</span>
+</div>
+  </div>
+  <div class="gset">
+    <div class="lab">UK ONS, July 2026 <small>businesses with 10+ staff; 49% among 250+</small>
+</div>
+    <div class="gbar" style="width:35%; background:#8a8178;">
+<span class="gval" style="position:absolute; left:calc(35% + 8px); top:0;">35%</span>
+</div>
+  </div>
+  <div class="gset">
+    <div class="lab">Eurostat, 2025 <small>EU enterprises with 10+ staff; 55% among large</small>
+</div>
+    <div class="gbar" style="width:20%; background:#8a8178;">
+<span class="gval" style="position:absolute; left:calc(20% + 8px); top:0;">20%</span>
+</div>
+  </div>
+  <figcaption>Registration-based surveys count every business, including small firms that dominate any economy. Executive surveys over-sample large companies with AI programs. Both are true; they answer different questions. Sources: McKinsey State of AI 2026; US Census Bureau Business Trends and Outlook Survey; UK ONS; Eurostat; compiled by <a href="https://itechnosol.com/research/ai-adoption-mid-size-businesses/">iTechnoSol's October 2026 review</a>.</figcaption>
+</figure>
+
+<p>The practical consequence: if you run a mid-size company, "88% of organizations use AI" is not a description of your competitive field. It is a description of the conference circuit. Your actual field looks like 32&ndash;37% in the US for firms your size, 49% in the UK, and 30&ndash;55% across Europe depending on headcount. That changes the urgency calculation. You are not late to a race everyone is running; you are deciding whether to join a race that a third to half of your peers have entered, most of them shallowly.</p>
+
+<h2>Why speed hasn't become profit</h2>
+
+<p>The most consistent 2026 finding, 80% of people working faster against a flat 37% reporting profit impact, has a mechanism, and it is the same mechanism the MIT report identified before anyone trusted it. McKinsey's analysts put it plainly: while workflows stay unchanged, faster individual work saves calendar time without appearing on the income statement.</p>
+
+<figure data-visual-form="causal-chain">
+  <p class="fig-title">Where the money goes missing between a license and a P&amp;L line</p>
+  <div class="chain">
+    <div class="step">
+      <span class="step-num">Step 1</span>
+      <b>Tokens bought</b>
+      <p class="step-desc">Seats, API spend, subscriptions. Costs land on the books immediately.</p>
+      <div class="step-connector">&rarr;</div>
+    </div>
+    <div class="step">
+      <span class="step-num">Step 2</span>
+      <b>Individual tasks get faster</b>
+      <p class="step-desc">Drafts, summaries, lookups. 80% of respondents feel this.</p>
+      <div class="step-connector">&rarr;</div>
+    </div>
+    <div class="step">
+      <span class="step-num">Step 3</span>
+      <b>Workflow stays unchanged</b>
+      <p class="step-desc">Same handoffs, approvals, staffing, and throughput targets as before.</p>
+      <div class="step-connector">&rarr;</div>
+    </div>
+    <div class="step">
+      <span class="step-num">Step 4</span>
+      <b>Time saved, output constant</b>
+      <p class="step-desc">Faster steps inside an unchanged process produce slack, not volume.</p>
+      <div class="step-connector">&rarr;</div>
+    </div>
+    <div class="step">
+      <span class="step-num">Step 5</span>
+      <b>Nothing reaches the P&amp;L</b>
+      <p class="step-desc">No revenue added, no cost removed. EBIT stays at 37% reporting, year after year.</p>
+    </div>
+  </div>
+  <figcaption>The high-performer escape hatch sits at step three: ~75% of organizations attributing 5%+ of EBIT to AI redesign workflows around it, against ~25% of everyone else. Source: McKinsey State of AI 2026; the chain is our synthesis of its findings.</figcaption>
+</figure>
+
+<p>The same survey shows what the escape looks like. High performers, the 6%, are roughly three times more likely to rebuild a process around AI than to bolt a tool onto an existing one, and that share rose from 55% to about 75% in a year while everyone else stayed near a quarter. They also target growth and innovation, not just efficiency, and they measure outcomes. Everything else in the 2026 data is noise around that mechanism.</p>
+
+<p>Two secondary findings deserve a line each. Expectations are running systematically ahead of experience: 32% of organizations expected AI to cut headcount, 14% experienced it, and only 13% of respondents feel their own job threatened. And token economics have started to bite: one in five organizations already limits AI use because of per-token operating costs, even as 60% plan to spend more next year. Capgemini found budgets rising from 3% to 5% of annual business spend, committed on five-year horizons, largely ahead of demonstrated returns.</p>
+
+<h2>What this means if you are signing an AI budget</h2>
+
+<p>Three conclusions survive the year's evidence.</p>
+
+<p>First, do not freeze spending because of the 95% figure, and do not expand it because of the 88% figure. Both are artifacts of bad denominators: one divided failures by organizations that never started, the other counts a single function's usage as adoption. The honest base rate for planning is that roughly a third of comparable organizations report measurable financial impact, and the share has not moved in a year. Plan against that number.</p>
+
+<p>Second, spend on workflow redesign, not on licenses. The single variable that separates high performers in every 2026 dataset is whether the process itself changed. Concretely: pick one workflow with a measurable baseline (cycle time, error rate, cost per case), redesign it end to end with AI inside it, and hold the before-and-after numbers. A tool added to an unchanged process buys calendar time you will never bill.</p>
+
+<p>Third, make expectations a written contract with yourself. The data shows organizations expecting twice as much as they experience, on headcount and returns alike. Before a pilot starts, write down the baseline, the result that would count as success, and the decision rule for continuing, changing, or stopping. Deloitte's survey found only a quarter of organizations have moved 40% of their pilots into production; the difference between a portfolio of perpetual pilots and a portfolio of decisions is that written rule.</p>
+
+<p>The 95% statistic will keep circulating. It is too convenient for the skeptics and too scary for the boosters to die. When someone quotes it at you, you now know the number is junk and the diagnosis underneath it is real: the models were never the bottleneck, the workflow is, and a year of data says the only companies escaping are the ones that rebuilt one.</p>
+
+<p class="sourcenote">Primary sources: MIT Project NANDA, <a href="https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf">The GenAI Divide: State of AI in Business 2025</a>; Fortune's original coverage; Rob Wiblin's <a href="https://forum.effectivealtruism.org/posts/q92qq7XCCLJonA6CH/the-story-behind-the-bad-ai-stat-that-moved-markets-and">critique and reconstruction</a>; McKinsey, <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai">The State of AI 2026</a> (reported via <a href="https://www.digital-chiefs.de/en/mckinsey-eight-out-of-ten-companies-accelerate-with-ai-while-ebit-remains/">Digital Chiefs</a>); Deloitte, <a href="https://www.deloitte.com/us/en/about/press-room/state-of-ai-report-2026.html">State of AI in the Enterprise 2026</a>; Capgemini Research Institute, <a href="https://www.capgemini.com/insights/research-library/ai-perspectives-2026/">The multi-year AI advantage</a>; Gartner, <a href="https://www.gartner.com/en/newsroom/press-releases/2024-07-29-gartner-predicts-30-percent-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept-by-end-of-2025">GenAI project abandonment prediction</a> (July 2024) and its June 2025 agentic-AI cancellation prediction; US Census Bureau, UK ONS, and Eurostat adoption releases as compiled by <a href="https://itechnosol.com/research/ai-adoption-mid-size-businesses/">iTechnoSol, October 2026</a>. Figures are our interpretation of these surveys; where we reconstruct rather than quote (the waffle funnel, the causal chain), we say so in the caption.</p>
+</div></div><div class="research-back"><a class="text-link" href="/blog/">Back to all notes<span class="arrow" aria-hidden="true">↗</span></a></div></article></main><section class="cta wrap narrow"><div><div class="eyebrow">Let’s make it useful</div><h2>Big questions.<br><span class="accent">Good conversation.</span></h2></div><a class="btn " href="/contact/">Let’s talk AI<span class="arrow" aria-hidden="true">↗</span></a></section><footer class="footer wrap narrow"><div class="footer-top"><div><a class="brand" href="/" aria-label="Coffee Cup AI home"><img class="brand-logo" src="/assets/coffee-cup-ai-logo-humans-own-ai.svg" width="217" height="44" alt="Coffee Cup AI — Humans Own AI"></a><p>Clear thinking about artificial intelligence.<br>One conversation at a time.</p></div><nav class="footer-links" aria-label="Footer"><a href="/about/">About Coffee Cup AI</a><a href="/ai-consulting/">AI Consulting</a><a href="/ai-speaker/">AI Speaker</a><a href="/ai-audits/">AI Audits</a><a href="/ai-job-loss/">AI Job Loss</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a><a href="mailto:dan@CoffeeCupAI.com">Email Dan <span class="arrow" aria-hidden="true">↗</span></a></nav></div><div class="footer-bottom"><span>© <span data-year>2026</span> Coffee Cup AI. All rights reserved.</span><span>HUMAN FIRST. FUTURE READY.</span><nav class="footer-policy-links" aria-label="Legal and sitemap links"><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/sitemap/">HTML Sitemap</a><a href="/sitemap.xml">XML Sitemap</a></nav></div></footer></body></html>
