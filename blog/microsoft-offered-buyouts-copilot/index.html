@@ -279,9 +279,9 @@
 .wr-article .chip-col {background:var(--panel2);border:1px solid var(--line);border-radius:3px;padding:16px;}
 .wr-article .chip-col .fig-heading {font-size:13px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px;font-weight:700;color:var(--ink);}
 .wr-article .chip-col .n {font-size:12.5px;color:var(--muted);margin-bottom:12px;display:block;}
-.wr-article .chip-col.offered h4 {color:var(--accent);}
-.wr-article .chip-col.partial h4 {color:var(--partial);}
-.wr-article .chip-col.protected h4 {color:var(--protected);}
+.wr-article .chip-col.offered .fig-heading {color:var(--accent);}
+.wr-article .chip-col.partial .fig-heading {color:var(--partial);}
+.wr-article .chip-col.protected .fig-heading {color:var(--protected);}
 .wr-article .chip {display:inline-block;font-size:13.5px;background:var(--bg);border:1px solid var(--line);border-radius:3px;padding:5px 10px;margin:0 6px 8px 0;color:var(--ink);font-weight:600;}
 .wr-article .chip small {display:block;font-weight:400;color:var(--muted);font-size:11px;line-height:1.35;margin-top:2px;}
 .wr-article .chip-col.offered .chip {border-color:#4a2c1a;}
@@ -341,7 +341,7 @@
 .wr-article .article-inner{width:100%;max-width:1040px;margin:0 auto;padding:clamp(42px,6vw,72px) clamp(28px,6.5vw,76px) clamp(64px,8vw,100px)}
 .wr-article .wrap{width:100%;max-width:860px;margin:0 auto;padding:0}
 .wr-article .narrow{width:100%;max-width:700px;margin:0 auto;padding:0}
-.wr-article figure{background:transparent;border:0;border-radius:0;padding:0;color:inherit;overflow:visible}
+.wr-article figure{--ink:#f5f1e9;--body:#ded7ce;--muted:#bcb5ac;--line:#5c5249;--fill:#26221e;background:transparent;border:0;border-radius:0;padding:0;color:inherit;overflow:visible}
 .wr-article figcaption{font-family:var(--display);font-size:13.5px;color:var(--muted);line-height:1.5;margin-top:12px;border:0;padding:0}
 .wr-article .wr-lead{margin:28px auto 38px;max-width:860px}
 .wr-article .wr-lead img{width:100%;height:auto;display:block;border-radius:8px}
@@ -438,8 +438,8 @@
       <!-- axes labels -->
       <text x="400" y="500" fill="#bcb5ac" font-size="13" text-anchor="middle">How much of this org's work AI can already do →</text>
       <text x="22" y="250" fill="#bcb5ac" font-size="13" text-anchor="middle" transform="rotate(-90 22 250)">How strongly capacity, trust, or revenue bottleneck the work →</text>
-      <text x="60" y="487" fill="#6f685f" font-size="11">low</text>
-      <text x="725" y="487" fill="#6f685f" font-size="11">high</text>
+      <text x="60" y="487" fill="#bcb5ac" font-size="11">low</text>
+      <text x="725" y="487" fill="#bcb5ac" font-size="11">high</text>
 
       <!-- offered (orange) -->
       <g>
@@ -543,7 +543,7 @@
     <div class="fig-sub">Year-over-year revenue change, from Microsoft's October 28 earnings report as covered by CNBC. Annotations: where the buyout-eligible and buyout-protected teams sit.</div>
     <svg viewBox="0 0 780 320" width="100%" role="img" aria-label="Bar chart of growth rates: Azure plus 48, Agents and Infra plus 25, Devices and Consumer minus 3, device and Windows licenses minus 22">
       <line x1="420" y1="20" x2="420" y2="250" stroke="#bcb5ac" stroke-width="1" opacity="0.5"/>
-      <text x="420" y="14" fill="#6f685f" font-size="11" text-anchor="middle">0%</text>
+      <text x="420" y="14" fill="#bcb5ac" font-size="11" text-anchor="middle">0%</text>
       <!-- Azure +48 -->
       <text x="20" y="48" fill="#f5f1e9" font-size="13.5" font-weight="600">Azure ($33.17B, first dollar disclosure)</text>
       <rect x="420" y="32" width="278" height="22" rx="2" fill="#fc630f"/>
