@@ -36,3 +36,21 @@
     transition: none;
   }
 }
+
+.footer-address,
+.contact-address,
+.policy-address {
+  margin: 16px 0 0;
+  color: #B8B4AD;
+  font-style: normal;
+  line-height: 1.7;
+}
+
+.footer-address {
+  font-size: 14px;
+}
+
+.contact-address,
+.policy-address {
+  color: #E9E4DC;
+}
