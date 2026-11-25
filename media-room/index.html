@@ -1,6 +1,30 @@
 <!doctype html>
 <html lang="en-US">
-<head>
+<head><!-- Google Tag Manager and Consent Mode -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+var ccaiAnalyticsConsent = "denied";
+try {
+  if (window.localStorage.getItem("ccai_analytics_consent") === "granted") {
+    ccaiAnalyticsConsent = "granted";
+  }
+} catch (error) {}
+gtag("consent", "default", {
+  ad_storage: "denied",
+  ad_user_data: "denied",
+  ad_personalization: "denied",
+  analytics_storage: ccaiAnalyticsConsent,
+  wait_for_update: 500
+});
+gtag("set", "ads_data_redaction", true);
+gtag("js", new Date());
+</script>
+<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-KWTXQGCW"></script>
+<link rel="stylesheet" href="/assets/analytics-consent.css">
+<script src="/assets/analytics-consent.js" defer></script>
+<!-- End Google Tag Manager and Consent Mode -->
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Coffee Cup AI Media Room | Press Releases & Company Information</title>
